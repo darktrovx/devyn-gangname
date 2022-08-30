@@ -1,7 +1,6 @@
 
 
 const update = (gang = null) => {
-
     const gangname = document.getElementById('gangname');
     gangname.className = '';
     gangname.innerHTML = gang.label + " - " + gang.grade.name;

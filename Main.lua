@@ -2,7 +2,6 @@ local QBCore = exports["qb-core"]:GetCoreObject()
 local GangData = nil
 
 local function Handler()
-    print(GangData)
     if GangData == nil or GangData.name == "none" then
         SendNUIMessage({
             action = 'REMOVE',
@@ -18,14 +17,8 @@ end
 
 AddEventHandler('onResourceStart', function(resourceName)
 	if (GetCurrentResourceName() ~= resourceName) then return end
-    GangData = QBCore.Functions.GetPlayerData().metadata
-    -- while GangData == nil do
-    --     print("Waiting")
-    --     Wait(500)
-    -- end
-    for k,v in pairs(GangData) do 
-        print(k,v)
-    end
+    GangData = QBCore.Functions.GetPlayerData().gang
+    Wait(5000)
     Handler()
 end)
 
@@ -35,10 +28,7 @@ RegisterNetEvent("QBCore:Client:OnPlayerUnload", function()
 end)
 
 RegisterNetEvent("QBCore:Client:OnPlayerLoaded", function()
-    GangData = QBCore.Functions.GetPlayerData().metadata.gang
-    while GangData == nil do
-        Wait(500)
-    end
+    GangData = QBCore.Functions.GetPlayerData().gang
     Handler()
 end)
 

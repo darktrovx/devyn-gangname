@@ -8,7 +8,7 @@ client_scripts {
 ui_page "html/index.html"
 
 files({
-	"html/*"
+	"html/*",
 })
 
 lua54 'yes'
