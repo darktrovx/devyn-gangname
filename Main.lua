@@ -1,5 +1,6 @@
 local QBCore = exports["qb-core"]:GetCoreObject()
 local GangData = nil
+local showingUI = false
 
 local function Handler()
     if GangData == nil or GangData.name == "none" then
@@ -14,6 +15,22 @@ local function Handler()
         })
     end
 end
+
+local function Toggle()
+    if showingUI then
+        SendNUIMessage({
+            action = 'REMOVE',
+            gang = GangData
+        })
+    else
+        showingUI = true
+        SendNUIMessage({
+            action = 'UPDATE',
+            gang = GangData
+        })
+    end
+end
+
 
 AddEventHandler('onResourceStart', function(resourceName)
 	if (GetCurrentResourceName() ~= resourceName) then return end
@@ -36,3 +53,7 @@ RegisterNetEvent("QBCore:Client:OnGangUpdate", function(gang)
     GangData = gang
     Handler()
 end)
+
+RegisterCommand("toggleGangName", function()
+    Toggle()
+end, false)
