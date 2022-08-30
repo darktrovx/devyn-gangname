@@ -1,0 +1,73 @@
+@font-face {
+    font-family: 'pricedownblack';
+    src: url('pricedown_bl-webfont.woff2') format('woff2'),
+         url('pricedown_bl-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+  font-family: 'pricedown';
+  src: url(pricedown.ttf);
+}
+
+@font-face {
+    font-family: 'gta-ui';
+    src: url('gta-ui.ttf');
+}
+
+@font-face {
+    font-family: 'pdown';
+    src: url('pdown.ttf');
+}
+
+
+body {
+    margin: 0;
+    padding: 0;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    scroll-behavior: smooth;
+}
+
+#gangname {
+    position: absolute; 
+    top: 0; 
+    right: 0;
+    width: auto;
+    font-size: 45px;
+    font-weight: bold;
+    font-family: pricedown !important;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+    padding-right: 40px;
+    padding-top: 40px;
+}
+
+.vagos {
+    color: gold;
+}
+
+.lostmc {
+    color: blue;
+}
+
+.ballas {
+    color: purple;
+}
+
+.cartel {
+    color: white;
+}
+
+.families {
+    color: green;
+}
+
+.triads {
+    color: red;
+}
